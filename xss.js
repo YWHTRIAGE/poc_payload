@@ -1,3 +1,5 @@
+alert(1)
+
 const csrf = window.parent.document
   .querySelector('meta[name="csrf-token"]')
   ?.getAttribute("content");
